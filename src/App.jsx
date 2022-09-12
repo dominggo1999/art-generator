@@ -26,7 +26,7 @@ const sketch = (p5) => {
 
   const randomDiagonaLine = (x, y, STEP_W, STEP_H) => {
     const random = Math.random();
-    p.strokeWeight(12);
+    p.strokeWeight(12 * 12);
     p.strokeCap(p.PROJECT);
 
     if (random > 0.5) {
@@ -39,7 +39,7 @@ const sketch = (p5) => {
   p5.setup = () => {
     const vw = window.innerWidth;
 
-    p = p5.createGraphics(CW * 2, CH * 2);
+    p = p5.createGraphics(CW * 12, CH * 12);
     p5.createCanvas(CW, CH);
 
     if (vw < 500) {
@@ -58,9 +58,9 @@ const sketch = (p5) => {
     p5.background(0);
     p.stroke('#db8421');
     p.background('#000000');
-    for (let x = 0; x < CW * 2; x += STEP_W * 2) {
-      for (let y = 0; y < CH * 2; y += STEP_H * 2) {
-        randomDiagonaLine(x, y, STEP_W * 2, STEP_H * 2);
+    for (let x = 0; x < CW * 12; x += STEP_W * 12) {
+      for (let y = 0; y < CH * 12; y += STEP_H * 12) {
+        randomDiagonaLine(x, y, STEP_W * 12, STEP_H * 12);
       }
     }
 
@@ -73,6 +73,9 @@ const sketch = (p5) => {
     if (vw < 500) {
       p5.canvas.style.width = `${vw}px`;
       p5.canvas.style.height = `${vw * (CW / CH)}px`;
+    } else {
+      p5.canvas.style.width = `${CW}px`;
+      p5.canvas.style.height = `${CH}px`;
     }
   };
 };
