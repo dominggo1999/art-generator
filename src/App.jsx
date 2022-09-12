@@ -84,26 +84,11 @@ const App = () => {
     const node = document.querySelectorAll('canvas')[0];
     const FILE_NAME = 'art.png';
 
-    console.log(node.toDataURL());
-
-    // toPng(node)
-    //   .then((dataUrl) => {
-    //     const link = document.createElement('a');
-    //     link.download = `${FILE_NAME}.png`;
-    //     link.href = dataUrl;
-    //     link.click();
-    //   });
+    const link = document.createElement('a');
+    link.download = `${FILE_NAME}.png`;
+    link.href = node.toDataURL();
+    link.click();
   };
-
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setForce((prev) => !prev);
-  //   }, 400);
-
-  //   return () => {
-  //     clearInterval(timer);
-  //   };
-  // }, []);
 
   return (
     <div tw="bg-[#1E1E1E] min-h-screen justify-center w-full flex py-20">
