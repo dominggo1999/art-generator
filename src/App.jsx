@@ -37,8 +37,15 @@ const sketch = (p5) => {
   };
 
   p5.setup = () => {
+    const vw = window.innerWidth;
+
     p = p5.createGraphics(CW * 2, CH * 2);
     p5.createCanvas(CW, CH);
+
+    if (vw < 500) {
+      p5.canvas.style.width = `${vw}px`;
+      p5.canvas.style.height = `${vw * (CW / CH)}px`;
+    }
     p5.noLoop();
   };
 
@@ -62,6 +69,7 @@ const sketch = (p5) => {
 
   p5.windowResized = () => {
     const vw = window.innerWidth;
+
     if (vw < 500) {
       p5.canvas.style.width = `${vw}px`;
       p5.canvas.style.height = `${vw * (CW / CH)}px`;
