@@ -10,9 +10,9 @@ import randomColor from 'randomcolor';
 //  */
 
 const CW = 500;
-const CH = 700;
-const COL = 10;
-const ROW = 10;
+const CH = 500;
+const COL = 5;
+const ROW = 5;
 const STEP_W = CW / COL;
 const STEP_H = CW / ROW;
 const ROTATION = [0, 60, 120, 180, 240, 300];
